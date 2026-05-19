@@ -1,0 +1,107 @@
+.q-screen-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  animation: fadeInUp 0.4s ease;
+}
+
+.q-screen-wrap .hud-frame {
+  width: 100%;
+  max-width: 860px;
+}
+
+/* ── Timer bar (Q2 only) ─────────────────────────────────── */
+.q-timer-bar {
+  height: 3px;
+  background: var(--border);
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.q-timer-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 1s linear;
+}
+
+/* ── Question text ───────────────────────────────────────── */
+.q-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.q-text {
+  font-size: 28px;
+  line-height: 150%;
+  color: var(--text-h);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Button layouts ──────────────────────────────────────── */
+.q-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.q-buttons-3 {
+  flex-direction: row;
+}
+
+.q-buttons-2 {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.q-buttons-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.q-btn {
+  flex: 1;
+  font-size: 22px;
+  padding: 20px 24px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Option buttons (Q2 A/B/C/D and Q3 forced) */
+.q-opt-btn,
+.q-forced-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+.q-opt-letter {
+  font-family: var(--mono);
+  font-size: 20px;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 24px;
+  margin-top: 2px;
+}
+
+.q-opt-text {
+  font-size: 20px;
+  color: var(--text-h);
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 145%;
+}
+
+/* "No sé" button subtle style */
+.q-btn-ns {
+  opacity: 0.75;
+}
+
+.q-btn-ns:hover {
+  opacity: 1;
+}

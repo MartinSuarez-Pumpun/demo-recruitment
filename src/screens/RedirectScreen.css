@@ -1,0 +1,83 @@
+.redirect-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  gap: 32px;
+  padding: 60px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeInUp 0.4s ease;
+}
+
+.redirect-icon {
+  font-size: 48px;
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+.redirect-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.redirect-title {
+  font-family: var(--mono);
+  font-size: 26px;
+  color: var(--text-h);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.redirect-body {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  text-align: left;
+}
+
+.redirect-body p {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 165%;
+  margin: 0 0 16px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.redirect-body p:last-child {
+  margin-bottom: 0;
+}
+
+.redirect-contact {
+  border: 1px solid var(--border-dim);
+  padding: 16px 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.redirect-contact-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.redirect-contact-text {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.redirect-actions {
+  display: flex;
+  gap: 16px;
+}

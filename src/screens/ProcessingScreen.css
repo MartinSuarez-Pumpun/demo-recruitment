@@ -1,0 +1,117 @@
+.processing-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 40px;
+  animation: fadeIn 0.5s ease;
+}
+
+.processing-logo {
+  font-family: var(--mono);
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.processing-spinner {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.processing-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  animation: pulseDot 1.4s ease-in-out infinite;
+}
+
+.processing-dot:nth-child(2) { animation-delay: 0.2s; }
+.processing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%       { opacity: 1;   transform: scale(1.2); }
+}
+
+.processing-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.processing-progress-track {
+  width: 420px;
+  height: 4px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.processing-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.processing-step-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--mono);
+  font-size: 17px;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.processing-step-row.active {
+  opacity: 1;
+  color: var(--text-h);
+}
+
+.processing-step-icon {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.processing-step-row.active .processing-step-icon {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.processing-screen.exiting {
+  animation: fadeOut 0.42s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.97); }
+}

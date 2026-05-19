@@ -1,0 +1,322 @@
+.report-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fadeInUp 0.4s ease;
+}
+
+.report-screen--empty {
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.report-empty-msg {
+  font-family: var(--mono);
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+/* ── Candidato ─────────────────────────────────────────────── */
+.report-candidato {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text);
+  border-left: 2px solid var(--accent);
+  padding-left: 14px;
+}
+
+.report-candidato-label {
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+.report-candidato-name {
+  color: var(--text-h);
+  font-size: 17px;
+}
+
+.report-candidato-age,
+.report-candidato-edu {
+  opacity: 0.7;
+}
+
+/* ── Headline ──────────────────────────────────────────────── */
+.headline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+}
+
+.headline-card .label {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  letter-spacing: 0.08em;
+}
+
+.headline-card h1 {
+  font-family: var(--mono);
+  font-size: 24px;
+  color: var(--text-h);
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.report-summary-text {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 160%;
+  margin: 0;
+  opacity: 0.85;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Specialty ─────────────────────────────────────────────── */
+.specialty-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.specialty-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+}
+
+.specialty-card--primary {
+  border-color: var(--accent);
+}
+
+.specialty-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.specialty-card--alt .specialty-badge {
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.specialty-name {
+  font-family: var(--mono);
+  font-size: 22px;
+  color: var(--text-h);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.specialty-branch {
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.7;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.specialty-affinity {
+  font-family: var(--mono);
+  font-size: 15px;
+  color: var(--text);
+}
+
+.specialty-affinity strong {
+  color: var(--accent);
+}
+
+/* ── Profile bars ──────────────────────────────────────────── */
+.profile-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.profile-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+}
+
+.profile-block-title {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.profile-bar-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 40px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.profile-bar-label {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-bar-track {
+  position: relative;
+  height: 6px;
+  background: var(--border);
+  overflow: visible;
+}
+
+.profile-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-bar-marker {
+  position: absolute;
+  top: -4px;
+  width: 1px;
+  height: 14px;
+  background: var(--text);
+  opacity: 0.4;
+  transform: translateX(-50%);
+}
+
+.profile-bar-value {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  text-align: right;
+}
+
+.gti-bar-wrap {
+  margin-bottom: 8px;
+}
+
+.gti-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 6px;
+  padding-left: 172px;
+}
+
+.gti-mark {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.gti-mark--lo { margin-left: calc(40% - 40px); }
+.gti-mark--hi { margin-left: calc(30% - 20px); }
+
+/* ── Profile summary ───────────────────────────────────────── */
+.profile-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.profile-summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+}
+
+.profile-summary-card p {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 160%;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Suboficiales ──────────────────────────────────────────── */
+.suboficiales-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  padding: 24px 28px;
+}
+
+.suboficiales-icon {
+  font-size: 28px;
+  color: var(--accent);
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.suboficiales-title {
+  font-family: var(--mono);
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.suboficiales-text {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 160%;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Two-col ───────────────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Actions ───────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .report-screen { padding: 24px; }
+  .specialty-grid,
+  .profile-section,
+  .profile-summary-grid,
+  .two-col { grid-template-columns: 1fr; }
+  .profile-bar-row { grid-template-columns: 120px 1fr 36px; }
+  .gti-legend { padding-left: 132px; }
+}
