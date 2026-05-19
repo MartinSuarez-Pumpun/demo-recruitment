@@ -1,0 +1,10 @@
+.recruitment-plugin {
+  --bg: #070707;
+  --accent: #22C55E;
+  --border: rgba(34, 197, 94, 0.22);
+
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}

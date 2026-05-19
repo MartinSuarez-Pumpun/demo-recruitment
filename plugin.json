@@ -1,0 +1,14 @@
+{
+  "id": "recruitment",
+  "version": "0.1.0",
+  "code": "MOD-10",
+  "label": "SELECCIÓN DE PERSONAL",
+  "desc": "EVALUACIÓN DE CANDIDATOS — PERFIL DE APTITUD — INFORME DE IDONEIDAD",
+  "icon": "UserCheck",
+  "color": "#22C55E",
+  "category": "evaluación",
+  "tag": "RECLUTAMIENTO",
+  "duration": "~5 MIN",
+  "status": "PRÓXIMO",
+  "entry": "src/plugin.jsx"
+}
