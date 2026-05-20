@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useStore } from '../core/store'
 import { Q4_ITEMS } from '../core/questions'
 import { HudFrame } from '../ui/HudFrame'
@@ -6,8 +6,15 @@ import './QScreen.css'
 
 export default function Q4Screen() {
   const [index, setIndex] = useState(0)
-  const { setQ4Answer, setPhase } = useStore()
+  const { setQ4Answer, setPhase, setAraText, setAraNextText } = useStore()
+  const araSpeaking = useStore(s => s.araSpeaking)
   const item = Q4_ITEMS[index]
+
+  useEffect(() => {
+    setAraText(item.text)
+    const next = Q4_ITEMS[index + 1]
+    setAraNextText(next ? next.text : '')
+  }, [index]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleAnswer(value) {
     setQ4Answer(item.id, value)
@@ -33,6 +40,7 @@ export default function Q4Screen() {
                 key={opt.value}
                 className="btn btn-ghost q-btn"
                 type="button"
+                disabled={araSpeaking}
                 onClick={() => handleAnswer(opt.value)}
               >
                 {opt.label}

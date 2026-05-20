@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100%;
   padding: 32px;
   box-sizing: border-box;
   animation: fadeInUp 0.4s ease;
@@ -69,6 +68,13 @@
   padding: 20px 24px;
   text-align: left;
   cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.q-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Option buttons (Q2 A/B/C/D and Q3 forced) */

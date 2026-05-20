@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useStore } from '../core/store'
 import { Q1_ITEMS } from '../core/questions'
 import { HudFrame } from '../ui/HudFrame'
@@ -6,8 +6,15 @@ import './QScreen.css'
 
 export default function Q1Screen() {
   const [index, setIndex] = useState(0)
-  const { setQ1Answer, setPhase } = useStore()
+  const { setQ1Answer, setPhase, setAraText, setAraNextText } = useStore()
+  const araSpeaking = useStore(s => s.araSpeaking)
   const item = Q1_ITEMS[index]
+
+  useEffect(() => {
+    setAraText(item.text)
+    const next = Q1_ITEMS[index + 1]
+    setAraNextText(next ? next.text : '')
+  }, [index]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleAnswer(value) {
     setQ1Answer(item.id, value)
@@ -28,9 +35,9 @@ export default function Q1Screen() {
         <div className="q-screen">
           <div className="q-text">{item.text}</div>
           <div className="q-buttons q-buttons-3">
-            <button className="btn btn-ghost q-btn" type="button" onClick={() => handleAnswer('si')}>Sí</button>
-            <button className="btn btn-ghost q-btn q-btn-ns" type="button" onClick={() => handleAnswer('ns')}>No sé</button>
-            <button className="btn btn-ghost q-btn" type="button" onClick={() => handleAnswer('no')}>No</button>
+            <button className="btn btn-ghost q-btn" type="button" disabled={araSpeaking} onClick={() => handleAnswer('si')}>Sí</button>
+            <button className="btn btn-ghost q-btn q-btn-ns" type="button" disabled={araSpeaking} onClick={() => handleAnswer('ns')}>No sé</button>
+            <button className="btn btn-ghost q-btn" type="button" disabled={araSpeaking} onClick={() => handleAnswer('no')}>No</button>
           </div>
         </div>
       </HudFrame>

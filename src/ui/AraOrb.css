@@ -1,0 +1,48 @@
+.ara-orb-panel {
+  width: 100%;
+  flex-shrink: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 16px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* ── Sphere ── */
+.ara-orb-sphere {
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+}
+
+/* ── Brand row ── */
+.ara-orb-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ara-orb-brand {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.ara-orb-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+  flex-shrink: 0;
+  animation: orb-dot-pulse 0.55s ease-in-out infinite;
+}
+
+@keyframes orb-dot-pulse {
+  0%, 100% { opacity: 1;    transform: scale(1); }
+  50%       { opacity: 0.2; transform: scale(0.55); }
+}

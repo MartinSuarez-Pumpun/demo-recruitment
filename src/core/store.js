@@ -14,6 +14,9 @@ const initial = {
   reportError: false,
   reportSummary: null,
   reportAudioUrl: null,
+  araText: '',      // texto que AraOrb lee en voz alta (pregunta actual)
+  araNextText: '',  // texto a pre-cachear (siguiente pregunta)
+  araSpeaking: false, // true mientras AraOrb reproduce audio
 }
 
 export const useStore = create((set) => ({
@@ -33,6 +36,9 @@ export const useStore = create((set) => ({
   setReportError:   (reportError)   => set({ reportError }),
   setReportSummary: (reportSummary) => set({ reportSummary }),
   setReportAudioUrl:(reportAudioUrl)=> set({ reportAudioUrl }),
+  setAraText:       (araText)       => set({ araText }),
+  setAraNextText:   (araNextText)   => set({ araNextText }),
+  setAraSpeaking:   (araSpeaking)   => set({ araSpeaking }),
   devJump: (phase, data = {})       => set({ ...initial, phase, ...data }),
   reset:   ()                       => set(initial),
 }))

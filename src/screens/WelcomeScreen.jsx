@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useStore } from '../core/store'
+import { Q1_ITEMS } from '../core/questions'
 import './WelcomeScreen.css'
 
 const FORMACION_OPTS = ['ESO', 'Bachillerato', 'FP', 'Universidad', 'Otro']
@@ -12,12 +13,15 @@ const MODULES = [
 ]
 
 export default function WelcomeScreen() {
-  const { startSession, setCandidato, setPhase } = useStore()
+  const { startSession, setCandidato, setPhase, setAraNextText } = useStore()
   const [nombre,    setNombre]    = useState('')
   const [edad,      setEdad]      = useState('')
   const [formacion, setFormacion] = useState('')
 
   const canStart = nombre.trim() && edad.trim() && formacion
+
+  // Pre-fetch la primera pregunta mientras el usuario rellena el formulario
+  useEffect(() => { setAraNextText(Q1_ITEMS[0].text) }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleStart() {
     setCandidato({ nombre: nombre.trim(), edad: edad.trim(), formacion })

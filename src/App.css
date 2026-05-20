@@ -2,26 +2,41 @@
 .app-shell {
   width: 100%;
   height: 100svh;
-  overflow: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   background: var(--bg);
 }
 
-/* ── Content layer ──────────────────────────────────────── */
-.app-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
+/* ── Body wrapper ───────────────────────────────────────── */
+.app-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modo orbe: centrado vertical con espaciadores flex */
+.app-body--orb::before,
+.app-body--orb::after {
+  content: '';
+  flex: 1;
+}
+
+/* Sin orbe (informe, procesando): content ocupa todo */
+.app-body:not(.app-body--orb) .app-content {
+  flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: none;
 }
 
-.app-content::-webkit-scrollbar { display: none; }
+.app-body:not(.app-body--orb) .app-content::-webkit-scrollbar { display: none; }
+
+/* ── Content layer ──────────────────────────────────────── */
+.app-content {
+  width: 100%;
+}
 
 /* ── Shared utility ─────────────────────────────────────── */
 .hud-label {

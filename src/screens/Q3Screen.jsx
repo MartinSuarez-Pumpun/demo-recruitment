@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useStore } from '../core/store'
 import { Q3_ITEMS } from '../core/questions'
 import { HudFrame } from '../ui/HudFrame'
@@ -6,8 +6,15 @@ import './QScreen.css'
 
 export default function Q3Screen() {
   const [index, setIndex] = useState(0)
-  const { setQ3Answer, setPhase } = useStore()
+  const { setQ3Answer, setPhase, setAraText, setAraNextText } = useStore()
+  const araSpeaking = useStore(s => s.araSpeaking)
   const item = Q3_ITEMS[index]
+
+  useEffect(() => {
+    setAraText(`${item.text} Opción A: ${item.options.A}. Opción B: ${item.options.B}.`)
+    const next = Q3_ITEMS[index + 1]
+    setAraNextText(next ? `${next.text} Opción A: ${next.options.A}. Opción B: ${next.options.B}.` : '')
+  }, [index]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleAnswer(value) {
     setQ3Answer(item.id, value)
@@ -31,6 +38,7 @@ export default function Q3Screen() {
             <button
               className="btn btn-ghost q-btn q-forced-btn"
               type="button"
+              disabled={araSpeaking}
               onClick={() => handleAnswer('A')}
             >
               <span className="q-opt-letter">A</span>
@@ -39,6 +47,7 @@ export default function Q3Screen() {
             <button
               className="btn btn-ghost q-btn q-forced-btn"
               type="button"
+              disabled={araSpeaking}
               onClick={() => handleAnswer('B')}
             >
               <span className="q-opt-letter">B</span>

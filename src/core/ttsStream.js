@@ -11,7 +11,7 @@
 export function streamTTS(text, { onChunk, onDone, onError }) {
   const params = new URLSearchParams({
     language:                   'es',
-    voice_id:                   'yis75yfp',
+    voice_id:                   'eve',
     codec:                      'mp3',
     sample_rate:                '24000',
     bit_rate:                   '128000',

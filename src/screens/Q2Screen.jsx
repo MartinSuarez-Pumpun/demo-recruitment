@@ -9,8 +9,15 @@ const TIMER_SECS = 45
 export default function Q2Screen() {
   const [index,   setIndex]   = useState(0)
   const [timeLeft, setTimeLeft] = useState(TIMER_SECS)
-  const { setQ2Answer, setPhase } = useStore()
+  const { setQ2Answer, setPhase, setAraText, setAraNextText } = useStore()
+  const araSpeaking = useStore(s => s.araSpeaking)
   const item = Q2_ITEMS[index]
+
+  useEffect(() => {
+    setAraText(item.text)
+    const next = Q2_ITEMS[index + 1]
+    setAraNextText(next ? next.text : '')
+  }, [index]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Cosmetic timer — resets on each new item
   useEffect(() => {
@@ -50,6 +57,7 @@ export default function Q2Screen() {
                 key={letter}
                 className="btn btn-ghost q-btn q-opt-btn"
                 type="button"
+                disabled={araSpeaking}
                 onClick={() => handleAnswer(letter)}
               >
                 <span className="q-opt-letter">{letter}</span>

@@ -1,9 +1,10 @@
 /*
- * Scoped CSS for demo-recruitment running as a plugin inside INNOVADEF-2026.
+ * Scoped CSS para demo-recruitment corriendo como plugin dentro de INNOVADEF-2026.
  *
- * index.css defines these vars on :root (only loaded when running standalone).
- * Here we scope them to the plugin wrapper so child components get them
- * without polluting the host app's :root.
+ * Solo define las CSS custom properties bajo .recruitment-plugin para que
+ * los componentes hijos las reciban sin contaminar el :root del host.
+ * Los overrides de layout se han eliminado — el plugin siempre ocupa
+ * pantalla completa (100svh) tanto en standalone como embebido.
  */
 
 .recruitment-plugin {
@@ -26,9 +27,9 @@
   --mono:          'Share Tech Mono', 'Courier New', monospace;
   --sans:          'Share Tech Mono', 'Courier New', monospace;
 
-  /* ── Layout — fit inside INNOVADEF content area ────────── */
+  /* ── Layout wrapper ────────────────────────────────────── */
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   font-family: var(--mono);
@@ -37,17 +38,4 @@
   letter-spacing: -1px;
   text-transform: uppercase;
   color: var(--text);
-}
-
-/* Override .app-shell when embedded */
-.recruitment-plugin .app-shell {
-  height: auto;
-  min-height: 100%;
-  overflow: visible;
-  background: transparent;
-}
-
-.recruitment-plugin .app-content {
-  overflow: visible;
-  height: auto;
 }
