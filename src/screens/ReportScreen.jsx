@@ -21,23 +21,34 @@ const PERSONALITY_LABELS = {
   A: 'Aspiración',
 }
 
-function ProfileBar({ label, value, max = 1, markers = [] }) {
-  const pct = Math.round((value / max) * 100)
+function ProfileBar({ label, value, max = 1, markers = [], markerLabels = [] }) {
+  const pct = Math.min(100, Math.round((value / max) * 100))
   return (
-    <div className="profile-bar-row">
-      <div className="profile-bar-label">{label}</div>
-      <div className="profile-bar-track">
-        {markers.map(m => (
-          <div
-            key={m}
-            className="profile-bar-marker"
-            style={{ left: `${m}%` }}
-          />
-        ))}
-        <div className="profile-bar-fill" style={{ width: `${pct}%` }} />
+    <>
+      <div className="profile-bar-row">
+        <div className="profile-bar-label">{label}</div>
+        <div className="profile-bar-track">
+          {markers.map(m => (
+            <div
+              key={m}
+              className="profile-bar-marker"
+              style={{ left: `${m}%` }}
+            />
+          ))}
+          <div className="profile-bar-fill" style={{ width: `${pct}%` }} />
+        </div>
+        <div className="profile-bar-value">{pct}%</div>
       </div>
-      <div className="profile-bar-value">{pct}%</div>
-    </div>
+      {markerLabels.length > 0 && (
+        <div className="profile-bar-row profile-bar-threshold-row">
+          <div className="profile-bar-marker-labels">
+            {markerLabels.map(({ pct: p, label: l }) => (
+              <div key={p} className="profile-bar-marker-label" style={{ left: `${p}%` }}>{l}</div>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
@@ -155,7 +166,7 @@ export default function ReportScreen({ onPluginComplete }) {
           <div className="specialty-name">{data.specialtyMatch.primary.name}</div>
           <div className="specialty-branch">{data.specialtyMatch.primary.branch}</div>
           <div className="specialty-affinity">
-            Afinidad: <strong>{Math.round(data.specialtyMatch.primary.affinity * 100)}%</strong>
+            Afinidad: <strong>{Math.round(Math.min(1, data.specialtyMatch.primary.affinity) * 100)}%</strong>
           </div>
         </div>
         <div className="specialty-card specialty-card--alt">
@@ -163,7 +174,7 @@ export default function ReportScreen({ onPluginComplete }) {
           <div className="specialty-name">{data.specialtyMatch.alternative.name}</div>
           <div className="specialty-branch">{data.specialtyMatch.alternative.branch}</div>
           <div className="specialty-affinity">
-            Afinidad: <strong>{Math.round(data.specialtyMatch.alternative.affinity * 100)}%</strong>
+            Afinidad: <strong>{Math.round(Math.min(1, data.specialtyMatch.alternative.affinity) * 100)}%</strong>
           </div>
         </div>
       </div>
@@ -180,11 +191,16 @@ export default function ReportScreen({ onPluginComplete }) {
         <div className="profile-block">
           <div className="profile-block-title">Índice de entrenabilidad (GTI)</div>
           <div className="gti-bar-wrap">
-            <ProfileBar label="GTI" value={gti} max={100} markers={[40, 70]} />
-            <div className="gti-legend">
-              <span className="gti-mark gti-mark--lo">▲40 Competente</span>
-              <span className="gti-mark gti-mark--hi">▲70 Destacado</span>
-            </div>
+            <ProfileBar
+              label="GTI"
+              value={gti}
+              max={100}
+              markers={[40, 70]}
+              markerLabels={[
+                { pct: 40, label: '▲40 Competente' },
+                { pct: 70, label: '▲70 Destacado' },
+              ]}
+            />
           </div>
 
           <div className="profile-block-title" style={{ marginTop: '24px' }}>Perfil de personalidad</div>

@@ -28,7 +28,7 @@
 
 .welcome-tagline {
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
   color: var(--text);
   opacity: 0.7;
@@ -90,10 +90,10 @@
 
 .welcome-formacion-btn {
   font-family: var(--mono);
-  font-size: 18px;
+  font-size: 22px;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding: 10px 20px;
+  padding: 12px 22px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   color: var(--text);
@@ -123,10 +123,10 @@
 
 .welcome-modules-title {
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .welcome-module-row {
@@ -141,9 +141,9 @@
 
 .welcome-module-num {
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 20px;
   color: var(--accent);
-  width: 28px;
+  width: 32px;
   flex-shrink: 0;
 }
 
@@ -155,7 +155,7 @@
 
 .welcome-module-meta {
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 20px;
   color: var(--text);
   white-space: nowrap;
 }
@@ -169,9 +169,9 @@
 
 .welcome-notice {
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 18px;
   color: var(--text);
   opacity: 0.5;
-  max-width: 580px;
+  max-width: 640px;
   line-height: 160%;
 }

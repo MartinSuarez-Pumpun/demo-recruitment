@@ -24,7 +24,7 @@ const Q1_WEIGHTS = {
 // F6: I1_6(2) + I1_10(2) + I1_12(1) = 5
 // F7: I1_7(2) = 2
 // F8: I1_8(2) + I1_11(1) = 3
-const Q1_FAMILY_MAX = { F1: 4, F2: 5, F3: 3, F4: 3, F5: 2, F6: 5, F7: 2, F8: 3 }
+const Q1_FAMILY_MAX = { F1: 8, F2: 10, F3: 6, F4: 6, F5: 4, F6: 10, F7: 4, F8: 6 }
 
 const Q1_VALUES = { si: 2, ns: 1, no: 0 }
 

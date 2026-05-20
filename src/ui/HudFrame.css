@@ -25,11 +25,11 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 14px 28px;
+  padding: 16px 28px;
   background: var(--bg-card);
   border-bottom: 1.5px solid var(--border);
   font-family: var(--mono);
-  font-size: 16px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -46,8 +46,8 @@
 
 .hud-phase {
   color: var(--text);
-  font-size: 14px;
-  padding: 3px 12px;
+  font-size: 18px;
+  padding: 4px 14px;
   border: 1px solid var(--border);
 }
 

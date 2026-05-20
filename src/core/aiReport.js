@@ -4,8 +4,8 @@ const Schema = z.object({
   headline:     z.string(),
   narrative:    z.string(),
   specialtyMatch: z.object({
-    primary:     z.object({ name: z.string(), branch: z.string(), affinity: z.number() }),
-    alternative: z.object({ name: z.string(), branch: z.string(), affinity: z.number() }),
+    primary:     z.object({ name: z.string(), branch: z.string(), affinity: z.number().min(0).max(1) }),
+    alternative: z.object({ name: z.string(), branch: z.string(), affinity: z.number().min(0).max(1) }),
   }),
   profileSummary: z.object({
     interests:   z.string(),
@@ -29,6 +29,7 @@ REGLAS INNEGOCIABLES:
 4. TONO: profesional, sobrio, técnico militar. Sin emojis ni florituras. Frases cortas y claras.
 5. El disclaimer debe incluir siempre: "Esta evaluación es una demostración tecnológica orientativa. No sustituye una valoración psicotécnica profesional completa ni puede usarse como criterio único de selección. Las pruebas oficiales se realizan en los Centros de Reclutamiento del Ministerio de Defensa."
 6. Responde SOLO con JSON válido, sin markdown ni fences.
+7. En profileSummary.personality describe los rasgos con nombres completos (Disciplina, Resiliencia, Trabajo en equipo, Orientación técnica, Aspiración/Autoridad), nunca con los códigos D/R/T/O/A.
 
 CRITERIOS DE GTI: <40 bajo (mencionar preparación), 40-69 competente, ≥70 destacado (abrir puerta a Suboficiales si procede).
 ESPECIALIDADES DISPONIBLES: Infantería Ligera (ET), Caballería (ET), Ingenieros (ET), Transmisiones (ET), Sanidad (ET/Armada/EAE), Logística (ET), Operaciones y Sistemas (Armada), Energía y Propulsión (Armada), Aprovisionamiento (Armada), Maniobra y Navegación (Armada), Infantería de Marina (Armada), Protección y Apoyo a la Fuerza (EAE), Mantenimiento Operativo (EAE).`
@@ -41,8 +42,9 @@ function buildPrompt(scores) {
     .map(([f, v]) => `  ${familyNames[f] ?? f}: ${Math.round(v * 100)}%`)
     .join('\n')
 
+  const TRAIT_NAMES = { D: 'Disciplina', R: 'Resiliencia', T: 'Trabajo en equipo', O: 'Orientación técnica', A: 'Aspiración/Autoridad' }
   const personalidadLines = Object.entries(personalidad)
-    .map(([r, v]) => `  ${r}: ${v}/3`)
+    .map(([r, v]) => `  ${TRAIT_NAMES[r] ?? r}: ${v}/3`)
     .join(', ')
 
   const primaryAff  = ranking.primary  ? (ranking.primary.affinity  * 100).toFixed(0) + '%' : 'N/D'
@@ -75,8 +77,8 @@ Especialidad recomendada por scoring: ${ranking.primary?.name} (${ranking.primar
 Especialidad alternativa: ${ranking.alternative?.name} (${ranking.alternative?.branch}) — afinidad ${altAff}
 ${flags.length ? '\nFlags especiales:\n' + flags.map(f => '  • ' + f).join('\n') : ''}
 
-Genera el informe en JSON siguiendo este esquema exacto:
-{"headline":"string","narrative":"string","specialtyMatch":{"primary":{"name":"string","branch":"string","affinity":number},"alternative":{"name":"string","branch":"string","affinity":number}},"profileSummary":{"interests":"string","cognitive":"string","personality":"string"},"strengths":["string"],"developmentAreas":["string"],"recommendation":"string","suboficialesPath":boolean,"disclaimer":"string"}`
+Genera el informe en JSON siguiendo este esquema exacto. IMPORTANTE: affinity debe ser un decimal entre 0 y 1 (ejemplo: 0.72 para 72% de afinidad), NUNCA un porcentaje entero.
+{"headline":"string","narrative":"string","specialtyMatch":{"primary":{"name":"string","branch":"string","affinity":decimal_0_a_1},"alternative":{"name":"string","branch":"string","affinity":decimal_0_a_1}},"profileSummary":{"interests":"string","cognitive":"string","personality":"string"},"strengths":["string"],"developmentAreas":["string"],"recommendation":"string","suboficialesPath":boolean,"disclaimer":"string"}`
 }
 
 function buildFallback(scores) {
