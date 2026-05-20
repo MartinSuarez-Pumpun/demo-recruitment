@@ -98,7 +98,10 @@ export default function ReportScreen({ onPluginComplete }) {
     return (
       <div className="report-screen report-screen--empty">
         <div className="report-empty-msg">Sin datos de informe</div>
-        <button className="btn btn-primary" type="button" onClick={handleNewSession}>Nueva sesión</button>
+        {onPluginComplete
+          ? <button className="btn btn-primary" style={{ width: '100%' }} type="button" onClick={handleReturnToSystem}>Obtener mi informe</button>
+          : <button className="btn btn-primary" type="button" onClick={handleNewSession}>Nueva sesión</button>
+        }
       </div>
     )
   }
@@ -288,14 +291,17 @@ export default function ReportScreen({ onPluginComplete }) {
 
       {/* ── Actions ────────────────────────────────────────── */}
       <div className="actions">
-        <button className="btn btn-ghost" type="button" onClick={handleNewSession}>
-          Nueva evaluación
-        </button>
-        {onPluginComplete && (
-          <button className="btn btn-primary" type="button" onClick={handleReturnToSystem}>
-            Volver al sistema
-          </button>
-        )}
+        {onPluginComplete
+          ? (
+            <button className="btn btn-primary" style={{ width: '100%' }} type="button" onClick={handleReturnToSystem}>
+              Obtener mi informe — Ver QR
+            </button>
+          ) : (
+            <button className="btn btn-ghost" type="button" onClick={handleNewSession}>
+              Nueva evaluación
+            </button>
+          )
+        }
       </div>
 
     </div>

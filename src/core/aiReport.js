@@ -108,14 +108,10 @@ function buildFallback(scores) {
 }
 
 export async function generateReport(scores) {
-  const key = import.meta.env.VITE_XAI_API_KEY
-  if (!key) return buildFallback(scores)
-
   try {
-    const res = await fetch('https://api.x.ai/v1/chat/completions', {
+    const res = await fetch('/api/xai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${key}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

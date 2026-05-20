@@ -69,7 +69,7 @@ export default function App({ onPluginComplete, pluginMode = false }) {
   return (
     <div className="app-shell">
       <MilitaryBackground />
-      <MouseGlow />
+      {!pluginMode && <MouseGlow />}
       <div className={`app-body${showOrb ? ' app-body--orb' : ''}`}>
         {showOrb && <AraOrb />}
         <div className="app-content">
