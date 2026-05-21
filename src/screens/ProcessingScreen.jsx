@@ -43,10 +43,13 @@ export default function ProcessingScreen() {
       const scores = computeScores({ q1, q2, q3, q4 })
       setScores(scores)
 
-      // M4.3='no' special case: redirect without calling AI
+      // M4.3='no' special case: redirect — generar informe en background igualmente
       if (scores.ranking.redirected) {
         clearInterval(interval)
         setProgress(100)
+        generateReport(scores)
+          .then(report => setReport(report))
+          .catch(() => setReportError(true))
         await new Promise(r => setTimeout(r, 600))
         setPhase('redirect')
         return

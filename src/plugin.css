@@ -1,10 +1,10 @@
 /*
  * Scoped CSS para demo-recruitment corriendo como plugin dentro de INNOVADEF-2026.
  *
- * Solo define las CSS custom properties bajo .recruitment-plugin para que
- * los componentes hijos las reciban sin contaminar el :root del host.
- * Los overrides de layout se han eliminado — el plugin siempre ocupa
- * pantalla completa (100svh) tanto en standalone como embebido.
+ * .recruitment-plugin — scopa los design tokens para no contaminar el :root del host.
+ * .recruitment-plugin .app-shell — sobreescribe height: 100svh a height: 100% para
+ *   que el plugin quepa en el contenedor fijo del host (header → status bar) sin scroll.
+ *   En modo standalone, este selector no aplica porque no existe .recruitment-plugin.
  */
 
 .recruitment-plugin {
@@ -32,6 +32,12 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+/* Cuando está embebido en el host, app-shell debe usar height: 100%
+   (no 100svh) para no salirse del contenedor fijo del host */
+.recruitment-plugin .app-shell {
+  height: 100%;
   font-family: var(--mono);
   font-size: 30px;
   line-height: 150%;

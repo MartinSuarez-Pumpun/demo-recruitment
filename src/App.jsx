@@ -64,7 +64,7 @@ export default function App({ onPluginComplete, pluginMode = false }) {
   }
 
   // El orbe se oculta en fases que tienen su propia presentación visual
-  const showOrb = !['processing', 'report', 'redirect'].includes(phase)
+  const showOrb = !['processing', 'report'].includes(phase)
 
   return (
     <div className="app-shell">

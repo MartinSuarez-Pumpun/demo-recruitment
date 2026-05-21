@@ -62,14 +62,15 @@
 
 .btn-primary {
   background: var(--accent-dim);
-  color: var(--accent);
-  border-color: var(--accent-border);
+  color: #ffaa00;
+  border-color: rgba(255, 170, 0, 0.45);
 }
 
 .btn-primary:hover {
   background: rgba(34, 197, 94, 0.18);
-  border-color: var(--accent);
-  box-shadow: inset 0 0 45px rgba(34, 197, 94, 0.08);
+  border-color: #ffd140;
+  color: #ffd140;
+  box-shadow: inset 0 0 45px rgba(255, 102, 0, 0.08);
 }
 
 .btn-primary:disabled {
@@ -79,13 +80,14 @@
 
 .btn-ghost {
   background: transparent;
-  color: var(--accent);
-  border-color: var(--accent-border);
+  color: #ffaa00;
+  border-color: rgba(255, 170, 0, 0.45);
 }
 
 .btn-ghost:hover {
   background: var(--accent-dim);
-  border-color: var(--accent);
+  border-color: #ffa040;
+  color: #ffa040;
 }
 
 .btn-danger {
