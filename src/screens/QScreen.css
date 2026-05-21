@@ -1,10 +1,17 @@
 .q-screen-wrap {
   display: flex;
-  align-items: center;
+  align-items: safe center;
   justify-content: center;
   padding: 32px;
   box-sizing: border-box;
   animation: fadeInUp 0.4s ease;
+}
+
+/* ── Responsive altura ───────────────────────────────────── */
+@media (max-height: 650px) {
+  .q-screen-wrap { padding: 16px 32px; }
+  .q-screen { gap: 24px; }
+  .q-timer-bar { margin-bottom: 20px; }
 }
 
 .q-screen-wrap .hud-frame {

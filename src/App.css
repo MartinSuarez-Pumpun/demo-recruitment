@@ -16,11 +16,25 @@
   flex-direction: column;
 }
 
-/* Modo orbe: centrado vertical con espaciadores flex */
+/* Modo orbe: scroll habilitado, centrado cuando cabe */
+.app-body--orb {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+.app-body--orb::-webkit-scrollbar { display: none; }
+
+/* Espaciadores flex: centran cuando hay espacio libre,
+   se comprimen a 0 cuando el contenido no cabe → scroll */
 .app-body--orb::before,
 .app-body--orb::after {
   content: '';
   flex: 1;
+}
+
+/* El contenido no se comprime aunque el viewport sea pequeño */
+.app-body--orb .app-content {
+  flex-shrink: 0;
 }
 
 /* Sin orbe (informe, procesando): content ocupa todo */
@@ -245,7 +259,12 @@
   to   { width: 0%; }
 }
 
-/* ── Responsive ─────────────────────────────────────────── */
+/* ── Responsive altura (landscape) ─────────────────────── */
+@media (max-height: 700px) {
+  .hud-header { padding: 10px 24px; }
+}
+
+/* ── Responsive anchura ──────────────────────────────────── */
 @media (max-width: 768px) {
   .hud-header {
     padding: 12px 16px;

@@ -176,7 +176,21 @@
   line-height: 160%;
 }
 
-/* ── Responsive ─────────────────────────────────────────── */
+/* ── Responsive altura (landscape portátil) ─────────────── */
+@media (max-height: 700px) {
+  .welcome-screen { gap: 16px; padding: 20px 24px; }
+  .welcome-modules { gap: 6px; }
+  .welcome-module-row { padding: 8px 12px; }
+  .welcome-cta { font-size: 20px; padding: 14px 28px; }
+}
+
+@media (max-height: 500px) {
+  .welcome-screen { gap: 10px; padding: 12px 24px; }
+  .welcome-modules-title { display: none; }
+  .welcome-notice { display: none; }
+}
+
+/* ── Responsive anchura ──────────────────────────────────── */
 @media (max-width: 640px) {
   .welcome-screen { padding: 24px 16px; gap: 20px; }
 
