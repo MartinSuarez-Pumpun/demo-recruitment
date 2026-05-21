@@ -111,3 +111,21 @@
 .q-btn-ns:hover {
   opacity: 1;
 }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .q-screen-wrap { padding: 16px; }
+  .q-screen { gap: 24px; }
+  .q-text { font-size: 22px; }
+  .q-buttons-4 { grid-template-columns: 1fr; }
+  .q-buttons-3 { flex-direction: column; gap: 12px; }
+  .q-btn { font-size: 18px; padding: 16px 18px; }
+  .q-opt-text { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  .q-text { font-size: 18px; }
+  .q-btn { font-size: 16px; padding: 14px 16px; }
+  .q-opt-text { font-size: 16px; }
+  .q-opt-letter { font-size: 18px; }
+}

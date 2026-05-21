@@ -12,8 +12,8 @@
 
 /* ── Sphere ── */
 .ara-orb-sphere {
-  width: 280px;
-  height: 280px;
+  width: min(280px, 60vw);
+  height: min(280px, 60vw);
   flex-shrink: 0;
 }
 

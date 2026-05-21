@@ -46,3 +46,11 @@
   gap: 16px;
   padding-top: 8px;
 }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .redirect-wrap { padding: 16px; }
+  .redirect-message { font-size: 20px; }
+  .redirect-hint { font-size: 17px; }
+  .redirect-actions { flex-direction: column; }
+}

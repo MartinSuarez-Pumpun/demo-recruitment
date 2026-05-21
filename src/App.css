@@ -244,3 +244,27 @@
   from { width: 100%; }
   to   { width: 0%; }
 }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hud-header {
+    padding: 12px 16px;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hud-header .brand { font-size: 24px; }
+  .hud-header .meta  { gap: 12px; font-size: 13px; }
+
+  .btn { font-size: 18px; padding: 14px 24px; }
+
+  .headline-card h1 { font-size: clamp(24px, 5vw, 40px); }
+  .tag-row { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  .hud-header .meta { flex-direction: column; gap: 4px; }
+  .btn { font-size: 16px; padding: 12px 18px; }
+  .headline-card { padding: 16px; }
+  .disclaimer { padding: 14px 16px; font-size: 14px; }
+}

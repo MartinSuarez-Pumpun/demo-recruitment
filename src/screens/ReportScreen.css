@@ -391,3 +391,19 @@
   .two-col { grid-template-columns: 1fr; }
   .profile-bar-row { grid-template-columns: 120px 1fr 36px; }
 }
+
+@media (max-width: 480px) {
+  .report-screen { padding: 16px; gap: 20px; }
+  .headline-card { padding: 20px 16px; }
+  .headline-card h1 { font-size: clamp(24px, 7vw, 40px); }
+  .report-summary-text { font-size: 18px; }
+  .specialty-name { font-size: clamp(20px, 5vw, 30px); }
+  .specialty-card { padding: 18px 16px; }
+  .profile-block { padding: 18px 16px; }
+  .profile-bar-row { grid-template-columns: 80px 1fr 32px; }
+  .profile-summary-card { padding: 16px; }
+  .profile-summary-card p { font-size: 17px; }
+  .actions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .suboficiales-callout { padding: 18px 16px; flex-direction: column; gap: 12px; }
+  .disclaimer { padding: 14px 16px; font-size: 15px; }
+}
