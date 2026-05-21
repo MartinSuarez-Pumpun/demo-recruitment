@@ -1,5 +1,7 @@
+import { useEffect } from 'react'
 import './plugin.css'
 import App from './App'
+import { useStore } from './core/store'
 
 /**
  * ARA — Plugin de reclutamiento para INNOVADEF-2026.
@@ -15,6 +17,10 @@ import App from './App'
  * onComplete(null) si el usuario sale sin completar o desde la pantalla de redirección.
  */
 export default function RecruitmentPlugin({ onComplete }) {
+  const reset = useStore(s => s.reset)
+
+  useEffect(() => () => reset(), []) // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <div className="recruitment-plugin">
       <App onPluginComplete={onComplete} pluginMode={true} />

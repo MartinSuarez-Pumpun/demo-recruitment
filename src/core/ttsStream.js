@@ -10,12 +10,11 @@
  */
 export function streamTTS(text, { onChunk, onDone, onError }) {
   const params = new URLSearchParams({
-    language:                   'es',
-    voice_id:                   'eve',
-    codec:                      'mp3',
-    sample_rate:                '24000',
-    bit_rate:                   '128000',
-    optimize_streaming_latency: '1',
+    language:    'es',
+    voice:       'eve',
+    codec:       'mp3',
+    sample_rate: '24000',
+    bit_rate:    '128000',
   })
 
   const wsUrl = `/ws-tts?${params}`
