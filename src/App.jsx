@@ -45,6 +45,8 @@ const T34_PROPS = {
   ],
 }
 
+const isTouch = window.matchMedia('(pointer: coarse)').matches
+
 export default function App({ onPluginComplete, pluginMode = false }) {
   const phase    = useStore(s => s.phase)
   const setPhase = useStore(s => s.setPhase)
@@ -69,7 +71,7 @@ export default function App({ onPluginComplete, pluginMode = false }) {
   return (
     <div className="app-shell">
       <MilitaryBackground />
-      {!pluginMode && <MouseGlow />}
+      {!pluginMode && !isTouch && <MouseGlow />}
       <div className={`app-body${showOrb ? ' app-body--orb' : ''}`}>
         {showOrb && <AraOrb />}
         <div className="app-content">

@@ -6,6 +6,7 @@ import './QScreen.css'
 
 export default function Q4Screen() {
   const [index, setIndex] = useState(0)
+  const [locked, setLocked] = useState(false)
   const { setQ4Answer, setPhase, setAraText, setAraNextText } = useStore()
   const araSpeaking = useStore(s => s.araSpeaking)
   const item = Q4_ITEMS[index]
@@ -14,9 +15,12 @@ export default function Q4Screen() {
     setAraText(item.text)
     const next = Q4_ITEMS[index + 1]
     setAraNextText(next ? next.text : '')
+    setLocked(false)
   }, [index]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleAnswer(value) {
+    if (locked) return
+    setLocked(true)
     setQ4Answer(item.id, value)
     if (index < Q4_ITEMS.length - 1) {
       setIndex(i => i + 1)
@@ -40,7 +44,7 @@ export default function Q4Screen() {
                 key={opt.value}
                 className="btn btn-ghost q-btn"
                 type="button"
-                disabled={araSpeaking}
+                disabled={araSpeaking || locked}
                 onClick={() => handleAnswer(opt.value)}
               >
                 {opt.label}

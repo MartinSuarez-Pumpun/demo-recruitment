@@ -51,9 +51,10 @@ export default function WelcomeScreen() {
           <input
             className="welcome-input welcome-input-short"
             type="text"
+            inputMode="numeric"
             placeholder="Edad"
             value={edad}
-            onChange={e => setEdad(e.target.value)}
+            onChange={e => setEdad(e.target.value.replace(/\D/g, ''))}
             maxLength={3}
           />
         </div>

@@ -6,6 +6,7 @@ import './QScreen.css'
 
 export default function Q1Screen() {
   const [index, setIndex] = useState(0)
+  const [locked, setLocked] = useState(false)
   const { setQ1Answer, setPhase, setAraText, setAraNextText } = useStore()
   const araSpeaking = useStore(s => s.araSpeaking)
   const item = Q1_ITEMS[index]
@@ -14,9 +15,12 @@ export default function Q1Screen() {
     setAraText(item.text)
     const next = Q1_ITEMS[index + 1]
     setAraNextText(next ? next.text : '')
+    setLocked(false)
   }, [index]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleAnswer(value) {
+    if (locked) return
+    setLocked(true)
     setQ1Answer(item.id, value)
     if (index < Q1_ITEMS.length - 1) {
       setIndex(i => i + 1)
@@ -35,9 +39,9 @@ export default function Q1Screen() {
         <div className="q-screen">
           <div className="q-text">{item.text}</div>
           <div className="q-buttons q-buttons-3">
-            <button className="btn btn-ghost q-btn" type="button" disabled={araSpeaking} onClick={() => handleAnswer('si')}>Sí</button>
-            <button className="btn btn-ghost q-btn q-btn-ns" type="button" disabled={araSpeaking} onClick={() => handleAnswer('ns')}>No sé</button>
-            <button className="btn btn-ghost q-btn" type="button" disabled={araSpeaking} onClick={() => handleAnswer('no')}>No</button>
+            <button className="btn btn-ghost q-btn" type="button" disabled={araSpeaking || locked} onClick={() => handleAnswer('si')}>Sí</button>
+            <button className="btn btn-ghost q-btn q-btn-ns" type="button" disabled={araSpeaking || locked} onClick={() => handleAnswer('ns')}>No sé</button>
+            <button className="btn btn-ghost q-btn" type="button" disabled={araSpeaking || locked} onClick={() => handleAnswer('no')}>No</button>
           </div>
         </div>
       </HudFrame>

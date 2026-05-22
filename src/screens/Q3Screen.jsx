@@ -6,6 +6,7 @@ import './QScreen.css'
 
 export default function Q3Screen() {
   const [index, setIndex] = useState(0)
+  const [locked, setLocked] = useState(false)
   const { setQ3Answer, setPhase, setAraText, setAraNextText } = useStore()
   const araSpeaking = useStore(s => s.araSpeaking)
   const item = Q3_ITEMS[index]
@@ -14,9 +15,12 @@ export default function Q3Screen() {
     setAraText(`${item.text} Opción A: ${item.options.A}. Opción B: ${item.options.B}.`)
     const next = Q3_ITEMS[index + 1]
     setAraNextText(next ? `${next.text} Opción A: ${next.options.A}. Opción B: ${next.options.B}.` : '')
+    setLocked(false)
   }, [index]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleAnswer(value) {
+    if (locked) return
+    setLocked(true)
     setQ3Answer(item.id, value)
     if (index < Q3_ITEMS.length - 1) {
       setIndex(i => i + 1)
@@ -38,7 +42,7 @@ export default function Q3Screen() {
             <button
               className="btn btn-ghost q-btn q-forced-btn"
               type="button"
-              disabled={araSpeaking}
+              disabled={araSpeaking || locked}
               onClick={() => handleAnswer('A')}
             >
               <span className="q-opt-letter">A</span>
@@ -47,7 +51,7 @@ export default function Q3Screen() {
             <button
               className="btn btn-ghost q-btn q-forced-btn"
               type="button"
-              disabled={araSpeaking}
+              disabled={araSpeaking || locked}
               onClick={() => handleAnswer('B')}
             >
               <span className="q-opt-letter">B</span>
