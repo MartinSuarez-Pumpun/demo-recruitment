@@ -264,6 +264,24 @@
   .hud-header { padding: 10px 24px; }
 }
 
+/* Landscape portátil: orbe a la izquierda, contenido a la derecha */
+@media (max-height: 650px) {
+  .app-body--orb {
+    flex-direction: row;
+    align-items: stretch;
+    overflow-y: visible;
+  }
+  .app-body--orb::before,
+  .app-body--orb::after { display: none; }
+  .app-body--orb .app-content {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .app-body--orb .app-content::-webkit-scrollbar { display: none; }
+}
+
 /* ── Responsive anchura ──────────────────────────────────── */
 @media (max-width: 768px) {
   .hud-header {
