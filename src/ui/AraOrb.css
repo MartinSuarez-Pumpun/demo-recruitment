@@ -17,6 +17,22 @@
   flex-shrink: 0;
 }
 
+/* Reduce esfera en pantallas bajas para que el form quepa */
+@media (max-height: 788px) {
+  .ara-orb-sphere {
+    width: min(200px, 40vw, 22vh);
+    height: min(200px, 40vw, 22vh);
+  }
+}
+
+@media (max-height: 650px) {
+  .ara-orb-sphere {
+    width: min(100px, 18vw, 16vh);
+    height: min(100px, 18vw, 16vh);
+  }
+  .ara-orb-brand { font-size: 16px; }
+}
+
 /* ── Brand row ── */
 .ara-orb-brand-row {
   display: flex;

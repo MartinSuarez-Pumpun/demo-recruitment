@@ -34,10 +34,46 @@
   flex-direction: column;
 }
 
+/* Barra de scroll visible para que el usuario sepa que puede scrollear */
+.recruitment-plugin .app-body--orb {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 197, 94, 0.45) rgba(0, 0, 0, 0.25);
+  padding-right: 4px;
+}
+.recruitment-plugin .app-body--orb::-webkit-scrollbar { width: 4px; }
+.recruitment-plugin .app-body--orb::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.25); border-radius: 2px; }
+.recruitment-plugin .app-body--orb::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.45);
+  border-radius: 2px;
+}
+.recruitment-plugin .app-body--orb::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.7);
+}
+
+/* Reporte / procesando — scroll container es .app-content (sin orbe) */
+.recruitment-plugin .app-body:not(.app-body--orb) .app-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 197, 94, 0.35) transparent;
+}
+.recruitment-plugin .app-body:not(.app-body--orb) .app-content::-webkit-scrollbar { width: 4px; }
+.recruitment-plugin .app-body:not(.app-body--orb) .app-content::-webkit-scrollbar-track { background: transparent; }
+.recruitment-plugin .app-body:not(.app-body--orb) .app-content::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.35);
+  border-radius: 2px;
+}
+.recruitment-plugin .app-body:not(.app-body--orb) .app-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.6);
+}
+
 /* Cuando está embebido en el host, app-shell debe usar height: 100%
-   (no 100svh) para no salirse del contenedor fijo del host */
+   (no 100svh) para no salirse del contenedor fijo del host.
+   overflow: hidden evita que el overflow interno llegue al contenedor
+   host (que también tiene overflow-y: auto), lo que causaba que
+   scrolleara el host en lugar del plugin. */
 .recruitment-plugin .app-shell {
   height: 100%;
+  overflow: hidden;
+  background: transparent;
   font-family: var(--mono);
   font-size: clamp(16px, 2.5vw, 30px);
   line-height: 150%;

@@ -273,6 +273,12 @@
   }
   .app-body--orb::before,
   .app-body--orb::after { display: none; }
+  /* sin width:auto el panel ocupa 100% en row-layout y aplasta el form */
+  .app-body--orb .ara-orb-panel {
+    width: clamp(100px, 22%, 160px);
+    padding: 8px 0;
+    gap: 6px;
+  }
   .app-body--orb .app-content {
     flex: 1;
     min-height: 0;
