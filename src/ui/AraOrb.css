@@ -25,13 +25,6 @@
   }
 }
 
-@media (max-height: 650px) {
-  .ara-orb-sphere {
-    width: min(100px, 18vw, 16vh);
-    height: min(100px, 18vw, 16vh);
-  }
-  .ara-orb-brand { font-size: 16px; }
-}
 
 /* ── Brand row ── */
 .ara-orb-brand-row {

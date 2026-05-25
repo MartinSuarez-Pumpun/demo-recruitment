@@ -264,29 +264,6 @@
   .hud-header { padding: 10px 24px; }
 }
 
-/* Landscape portátil: orbe a la izquierda, contenido a la derecha */
-@media (max-height: 650px) {
-  .app-body--orb {
-    flex-direction: row;
-    align-items: stretch;
-    overflow-y: visible;
-  }
-  .app-body--orb::before,
-  .app-body--orb::after { display: none; }
-  /* sin width:auto el panel ocupa 100% en row-layout y aplasta el form */
-  .app-body--orb .ara-orb-panel {
-    width: clamp(100px, 22%, 160px);
-    padding: 8px 0;
-    gap: 6px;
-  }
-  .app-body--orb .app-content {
-    flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-    scrollbar-width: none;
-  }
-  .app-body--orb .app-content::-webkit-scrollbar { display: none; }
-}
 
 /* ── Responsive anchura ──────────────────────────────────── */
 @media (max-width: 768px) {
