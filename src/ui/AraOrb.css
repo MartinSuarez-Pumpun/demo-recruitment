@@ -12,17 +12,9 @@
 
 /* ── Sphere ── */
 .ara-orb-sphere {
-  width: min(280px, 60vw, 35vh);
-  height: min(280px, 60vw, 35vh);
+  width: min(26vmin, 60vw);
+  height: min(26vmin, 60vw);
   flex-shrink: 0;
-}
-
-/* Reduce esfera en pantallas bajas para que el form quepa */
-@media (max-height: 788px) {
-  .ara-orb-sphere {
-    width: min(200px, 40vw, 22vh);
-    height: min(200px, 40vw, 22vh);
-  }
 }
 
 
