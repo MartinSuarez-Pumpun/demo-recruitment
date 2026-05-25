@@ -1,8 +1,8 @@
 .report-screen {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 20px;
+  gap: 2.96vmin;
+  padding: 1.85vmin;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
@@ -17,33 +17,33 @@
 
 .report-empty-msg {
   font-family: var(--mono);
-  font-size: 18px;
+  font-size: clamp(13px, 1.67vmin, 9999px);
   color: var(--text);
-  margin-bottom: 24px;
+  margin-bottom: 2.22vmin;
 }
 
 /* ── Candidato ─────────────────────────────────────────────── */
 .report-candidato {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 1.11vmin;
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   color: var(--text);
   border-left: 3px solid var(--accent);
-  padding-left: 18px;
+  padding-left: 1.67vmin;
 }
 
 .report-candidato-label {
   text-transform: uppercase;
   color: var(--accent);
-  font-size: 12px;
+  font-size: clamp(10px, 1.11vmin, 9999px);
   margin-right: 4px;
 }
 
 .report-candidato-name {
   color: var(--text-h);
-  font-size: 24px;
+  font-size: clamp(16px, 2.22vmin, 9999px);
 }
 
 .report-candidato-age,
@@ -55,29 +55,29 @@
 .headline-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 28px 32px;
+  padding: 2.59vmin 2.96vmin;
 }
 
 .headline-card .label {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 1.11vmin;
   letter-spacing: 0.08em;
 }
 
 .headline-card h1 {
   font-family: var(--mono);
-  font-size: 40px;
+  font-size: clamp(24px, 3.70vmin, 9999px);
   color: var(--text-h);
   text-transform: uppercase;
-  margin: 0 0 14px;
+  margin: 0 0 1.30vmin;
   line-height: 1.2;
 }
 
 .report-summary-text {
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   color: var(--text);
   line-height: 160%;
   margin: 0;
@@ -90,13 +90,13 @@
 .specialty-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 1.85vmin;
 }
 
 .specialty-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 24px 28px;
+  padding: 2.22vmin 2.59vmin;
 }
 
 .specialty-card--primary {
@@ -105,11 +105,11 @@
 
 .specialty-badge {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--accent);
   letter-spacing: 0.1em;
-  margin-bottom: 12px;
+  margin-bottom: 1.11vmin;
 }
 
 .specialty-card--alt .specialty-badge {
@@ -119,25 +119,25 @@
 
 .specialty-name {
   font-family: var(--mono);
-  font-size: 30px;
+  font-size: clamp(20px, 2.78vmin, 9999px);
   color: var(--text-h);
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 0.74vmin;
   line-height: 1.2;
 }
 
 .specialty-branch {
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   color: var(--text);
   opacity: 0.7;
-  margin-bottom: 16px;
+  margin-bottom: 1.48vmin;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .specialty-affinity {
   font-family: var(--mono);
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   color: var(--text);
 }
 
@@ -149,37 +149,37 @@
 .profile-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 2.96vmin;
 }
 
 .profile-block {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 24px 28px;
+  padding: 2.22vmin 2.59vmin;
 }
 
 .profile-block-title {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--accent);
   letter-spacing: 0.08em;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
+  margin-bottom: 1.85vmin;
+  padding-bottom: 1.11vmin;
   border-bottom: 1px solid var(--border-dim);
 }
 
 .profile-bar-row {
   display: grid;
-  grid-template-columns: fit-content(100%) auto 40px;
+  grid-template-columns: fit-content(100%) auto 3.70vmin;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
+  gap: 1.11vmin;
+  margin-bottom: 0.93vmin;
 }
 
 .profile-bar-label {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   color: var(--text);
   text-transform: uppercase;
   white-space: nowrap;
@@ -189,7 +189,7 @@
 
 .profile-bar-track {
   position: relative;
-  height: 8px;
+  height: 0.74vmin;
   background: var(--border);
   overflow: hidden;
 }
@@ -197,7 +197,7 @@
 /* Fila independiente para etiquetas de umbral (GTI) */
 .profile-bar-threshold-row {
   margin-top: -4px;
-  margin-bottom: 6px;
+  margin-bottom: 0.56vmin;
   align-items: start;
 }
 .profile-bar-row.profile-bar-threshold-row{
@@ -212,7 +212,7 @@
 .profile-bar-marker-label {
   display: flex;
   font-family: var(--mono);
-  font-size: 16px;
+  font-size: clamp(10px, 1.48vmin, 9999px);
   color: var(--text);
   opacity: 0.5;
   text-transform: uppercase;
@@ -231,7 +231,7 @@
   position: absolute;
   top: -4px;
   width: 1px;
-  height: 14px;
+  height: 1.30vmin;
   background: var(--text);
   opacity: 0.4;
   transform: translateX(-50%);
@@ -239,30 +239,30 @@
 
 .profile-bar-value {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   color: var(--accent);
   text-align: right;
 }
 
 .gti-bar-wrap {
-  margin-bottom: 8px;
+  margin-bottom: 0.74vmin;
 }
 
 /* ── Profile summary ───────────────────────────────────────── */
 .profile-summary-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 1.85vmin;
 }
 
 .profile-summary-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 20px 24px;
+  padding: 1.85vmin 2.22vmin;
 }
 
 .profile-summary-card p {
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   color: var(--text);
   line-height: 160%;
   margin: 0;
@@ -274,14 +274,14 @@
 .suboficiales-callout {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 1.85vmin;
   background: var(--bg-card);
   border: 1px solid var(--accent);
-  padding: 24px 28px;
+  padding: 2.22vmin 2.59vmin;
 }
 
 .suboficiales-icon {
-  font-size: 28px;
+  font-size: clamp(18px, 2.59vmin, 9999px);
   color: var(--accent);
   flex-shrink: 0;
   line-height: 1;
@@ -290,15 +290,15 @@
 
 .suboficiales-title {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--accent);
   letter-spacing: 0.08em;
-  margin-bottom: 10px;
+  margin-bottom: 0.93vmin;
 }
 
 .suboficiales-text {
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   color: var(--text);
   line-height: 160%;
   text-transform: none;
@@ -309,22 +309,22 @@
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 24px 28px;
+  padding: 2.22vmin 2.59vmin;
 }
 
 .card-title {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--accent);
   letter-spacing: 0.08em;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
+  margin-bottom: 1.48vmin;
+  padding-bottom: 1.11vmin;
   border-bottom: 1px solid var(--border-dim);
 }
 
 .card p {
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   color: var(--text);
   line-height: 160%;
   margin: 0;
@@ -335,9 +335,9 @@
 .tag-row {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 10px;
-  font-size: 22px;
+  gap: 1.11vmin;
+  margin-bottom: 0.93vmin;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   text-transform: none;
   letter-spacing: 0;
   line-height: 150%;
@@ -347,7 +347,7 @@
 
 .bullet {
   flex-shrink: 0;
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   line-height: 1.6;
 }
 
@@ -357,29 +357,29 @@
 /* ── Disclaimer ────────────────────────────────────────────── */
 .disclaimer {
   font-family: var(--mono);
-  font-size: 18px;
+  font-size: clamp(13px, 1.67vmin, 9999px);
   color: var(--text);
   opacity: 0.5;
   line-height: 160%;
   text-transform: none;
   letter-spacing: 0;
   border: 1px solid var(--border-dim);
-  padding: 20px 28px;
+  padding: 1.85vmin 2.59vmin;
 }
 
 /* ── Two-col ───────────────────────────────────────────────── */
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 1.85vmin;
 }
 
 /* ── Actions ───────────────────────────────────────────────── */
 .actions {
   display: flex;
-  gap: 16px;
+  gap: 1.48vmin;
   justify-content: flex-end;
-  padding-bottom: 40px;
+  padding-bottom: 3.70vmin;
 }
 
 /* ── Responsive ────────────────────────────────────────────── */

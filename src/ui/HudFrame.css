@@ -10,8 +10,8 @@
 
 .corner {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 1.11vmin;
+  height: 1.11vmin;
   border-color: var(--accent);
   border-style: solid;
 }
@@ -24,12 +24,12 @@
 .hud-top-bar {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 16px 28px;
+  gap: 1.85vmin;
+  padding: 1.48vmin 2.59vmin;
   background: var(--bg-card);
   border-bottom: 1.5px solid var(--border);
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
 }
 
@@ -46,13 +46,13 @@
 
 .hud-phase {
   color: var(--text);
-  font-size: 18px;
-  padding: 4px 14px;
+  font-size: clamp(13px, 1.67vmin, 9999px);
+  padding: 0.37vmin 1.30vmin;
   border: 1px solid var(--border);
 }
 
 .hud-content {
-  padding: 36px;
+  padding: 3.33vmin;
 }
 
 /* ── Responsive ─────────────────────────────────────────── */

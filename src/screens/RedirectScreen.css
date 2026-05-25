@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 2.96vmin;
   box-sizing: border-box;
   animation: fadeInUp 0.4s ease;
 }
@@ -15,11 +15,11 @@
 .redirect-content {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 2.59vmin;
 }
 
 .redirect-message {
-  font-size: 26px;
+  font-size: clamp(17px, 2.41vmin, 9999px);
   line-height: 160%;
   color: var(--text-h);
   text-transform: none;
@@ -28,7 +28,7 @@
 }
 
 .redirect-hint {
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   color: var(--text);
   text-transform: none;
   letter-spacing: 0;
@@ -43,8 +43,8 @@
 
 .redirect-actions {
   display: flex;
-  gap: 16px;
-  padding-top: 8px;
+  gap: 1.48vmin;
+  padding-top: 0.74vmin;
 }
 
 /* ── Responsive ─────────────────────────────────────────── */

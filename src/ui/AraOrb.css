@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0 0px;
-  gap: 10px;
+  padding: 1.85vmin 0 0;
+  gap: 0.93vmin;
   box-sizing: border-box;
 }
 
@@ -37,20 +37,20 @@
 .ara-orb-brand-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.93vmin;
 }
 
 .ara-orb-brand {
   font-family: var(--mono);
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--accent);
 }
 
 .ara-orb-dot {
-  width: 8px;
-  height: 8px;
+  width: 0.74vmin;
+  height: 0.74vmin;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 6px var(--accent);

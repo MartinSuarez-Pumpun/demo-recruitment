@@ -2,7 +2,7 @@
   display: flex;
   align-items: safe center;
   justify-content: center;
-  padding: 32px;
+  padding: 2.96vmin;
   box-sizing: border-box;
   animation: fadeInUp 0.4s ease;
 }
@@ -23,7 +23,7 @@
 .q-timer-bar {
   height: 3px;
   background: var(--border);
-  margin-bottom: 36px;
+  margin-bottom: 3.33vmin;
   overflow: hidden;
 }
 
@@ -37,11 +37,11 @@
 .q-screen {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 3.70vmin;
 }
 
 .q-text {
-  font-size: 28px;
+  font-size: clamp(17px, 2.59vmin, 9999px);
   line-height: 150%;
   color: var(--text-h);
   text-transform: none;
@@ -51,7 +51,7 @@
 /* ── Button layouts ──────────────────────────────────────── */
 .q-buttons {
   display: flex;
-  gap: 16px;
+  gap: 1.48vmin;
 }
 
 .q-buttons-3 {
@@ -60,19 +60,19 @@
 
 .q-buttons-2 {
   flex-direction: column;
-  gap: 20px;
+  gap: 1.85vmin;
 }
 
 .q-buttons-4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 1.48vmin;
 }
 
 .q-btn {
   flex: 1;
-  font-size: 22px;
-  padding: 20px 24px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
+  padding: 1.85vmin 2.22vmin;
   text-align: left;
   cursor: pointer;
   transition: opacity 0.2s ease;
@@ -89,21 +89,21 @@
 .q-forced-btn {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 1.48vmin;
   text-align: left;
 }
 
 .q-opt-letter {
   font-family: var(--mono);
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   color: var(--accent);
   flex-shrink: 0;
-  width: 28px;
+  width: 2.59vmin;
   margin-top: 2px;
 }
 
 .q-opt-text {
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   color: var(--text-h);
   text-transform: none;
   letter-spacing: 0;

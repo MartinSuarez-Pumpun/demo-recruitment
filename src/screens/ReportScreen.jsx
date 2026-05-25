@@ -206,7 +206,7 @@ export default function ReportScreen({ onPluginComplete }) {
             />
           </div>
 
-          <div className="profile-block-title" style={{ marginTop: '24px' }}>Perfil de personalidad</div>
+          <div className="profile-block-title" style={{ marginTop: '2.22vmin' }}>Perfil de personalidad</div>
           {Object.entries(PERSONALITY_LABELS).map(([trait, label]) => {
             const val = personalidad[trait] ?? 0
             return (

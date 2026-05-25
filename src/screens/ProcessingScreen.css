@@ -4,15 +4,15 @@
   align-items: center;
   justify-content: safe center;
   min-height: 100%;
-  padding: 40px 24px;
+  padding: 3.70vmin 2.22vmin;
   box-sizing: border-box;
-  gap: 40px;
+  gap: 3.70vmin;
   animation: fadeIn 0.5s ease;
 }
 
 .processing-logo {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--accent);
   opacity: 0.8;
@@ -20,13 +20,13 @@
 
 .processing-spinner {
   display: flex;
-  gap: 14px;
+  gap: 1.30vmin;
   align-items: center;
 }
 
 .processing-dot {
-  width: 16px;
-  height: 16px;
+  width: 1.48vmin;
+  height: 1.48vmin;
   background: var(--accent);
   animation: pulseDot 1.4s ease-in-out infinite;
 }
@@ -43,9 +43,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 1.11vmin;
   font-family: var(--mono);
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   text-transform: uppercase;
   color: var(--text);
 }
@@ -67,7 +67,7 @@
 .processing-steps {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.93vmin;
   max-width: 480px;
   width: 100%;
 }
@@ -75,9 +75,9 @@
 .processing-step-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 1.30vmin;
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   color: var(--text);
   opacity: 0.6;
 }
@@ -88,14 +88,14 @@
 }
 
 .processing-step-icon {
-  width: 26px;
-  height: 26px;
+  width: 2.41vmin;
+  height: 2.41vmin;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 16px;
+  font-size: clamp(10px, 1.48vmin, 9999px);
 }
 
 .processing-step-row.active .processing-step-icon {

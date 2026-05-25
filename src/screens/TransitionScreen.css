@@ -3,9 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 32px;
-  padding: 0 32px;
-  gap: 36px;
+  padding: 0 2.96vmin;
+  gap: 3.33vmin;
   animation: fadeIn 0.5s ease;
   box-sizing: border-box;
 }
@@ -14,12 +13,12 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.93vmin;
 }
 
 .transition-label {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -32,7 +31,7 @@
 }
 
 .transition-desc {
-  font-size: 24px;
+  font-size: clamp(16px, 2.22vmin, 9999px);
   color: var(--text-h);
   max-width: 680px;
   text-align: center;
@@ -42,7 +41,7 @@
 .transition-items {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1.11vmin;
   max-width: 620px;
   width: 100%;
 }
@@ -50,27 +49,27 @@
 .transition-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 16px 24px;
+  gap: 1.30vmin;
+  padding: 1.48vmin 2.22vmin;
   border: 1px solid var(--border);
   background: var(--bg-panel);
 }
 
 .transition-item-bullet {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   color: var(--accent);
   flex-shrink: 0;
 }
 
 .transition-item-text {
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   color: var(--text-h);
 }
 
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(1.11vmin); }
   to   { opacity: 1; transform: translateY(0); }
 }
 

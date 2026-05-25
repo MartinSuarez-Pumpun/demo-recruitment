@@ -55,7 +55,7 @@
 /* ── Shared utility ─────────────────────────────────────── */
 .hud-label {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--text);
 }
@@ -63,10 +63,10 @@
 /* ── Buttons ────────────────────────────────────────────── */
 .btn {
   font-family: var(--mono);
-  font-size: 22px;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding: 18px 36px;
+  padding: 1.67vmin 3.33vmin;
   border: 1.5px solid var(--accent-border);
   cursor: pointer;
   transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
@@ -120,23 +120,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 32px;
+  padding: 1.85vmin 2.96vmin;
   border: 1px solid var(--border);
   background: var(--bg-panel);
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
 }
 
 .hud-header .brand {
   color: var(--accent);
   font-weight: 600;
-  font-size: 36px;
+  font-size: clamp(23px, 3.33vmin, 9999px);
 }
 
 .hud-header .meta {
   display: flex;
-  gap: 24px;
+  gap: 2.22vmin;
   color: var(--text);
 }
 
@@ -145,11 +145,11 @@
 
 .status-dot {
   display: inline-block;
-  width: 11px;
-  height: 11px;
+  width: 1.02vmin;
+  height: 1.02vmin;
   background: var(--green);
   box-shadow: 0 0 6px var(--green);
-  margin-right: 6px;
+  margin-right: 0.56vmin;
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -157,22 +157,22 @@
 .headline-card {
   border: 1px solid var(--accent-border);
   background: var(--accent-dim);
-  padding: 20px 24px;
+  padding: 1.85vmin 2.22vmin;
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 1.48vmin;
 }
 
 .headline-card .label {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 8px;
+  margin-bottom: 0.74vmin;
 }
 
 .headline-card h1 {
-  font-size: 40px;
+  font-size: clamp(26px, 3.70vmin, 9999px);
   font-weight: 500;
   line-height: 130%;
   color: var(--text-h);
@@ -182,18 +182,18 @@
 .card {
   border: 1px solid var(--border);
   background: var(--bg-card);
-  padding: 20px 24px;
+  padding: 1.85vmin 2.22vmin;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1.11vmin;
 }
 
 .card-title {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   text-transform: uppercase;
   color: var(--text);
-  padding-bottom: 14px;
+  padding-bottom: 1.30vmin;
   border-bottom: 1px solid var(--border-dim);
 }
 
@@ -201,20 +201,20 @@
 .tag-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.56vmin;
 }
 
 .tag-row {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  font-size: 22px;
+  gap: 1.11vmin;
+  font-size: clamp(15px, 2.04vmin, 9999px);
   line-height: 140%;
 }
 
 .tag-row .bullet {
   font-family: var(--mono);
-  font-size: 20px;
+  font-size: clamp(14px, 1.85vmin, 9999px);
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -225,9 +225,9 @@
 /* ── Disclaimer ─────────────────────────────────────────── */
 .disclaimer {
   border: 1px solid var(--border-dim);
-  padding: 20px 28px;
+  padding: 1.85vmin 2.59vmin;
   font-family: var(--mono);
-  font-size: 18px;
+  font-size: clamp(13px, 1.67vmin, 9999px);
   line-height: 160%;
   color: var(--text);
   opacity: 0.6;
